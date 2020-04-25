@@ -1,0 +1,9 @@
+<div class="p-4 rounded bg-warning text-right tips" dir="rtl" [style.maxHeight.px]="maxHeight" #tips>
+  <h4 class="d-flex align-items-center justify-content-start">
+    <mat-icon class="ml-2">error</mat-icon>
+    لطفا توجه کنید :
+  </h4>
+  <ul>
+    <li class="mb-3" *ngFor="let warning of warnings">{{warning}}</li>
+  </ul>
+</div>

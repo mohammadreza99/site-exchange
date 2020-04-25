@@ -1,0 +1,155 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <mat-tab-group dir="ltr" mat-stretch-tabs>
+        <mat-tab dir="rtl" label="اطلاعات شخصی">
+          <div class="container-fluid p-4">
+            <h3 class="text-center text-md-right title">
+              شماره کاربری :
+              <span>{{'0251463'}}</span>
+            </h3>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="image-wrapper d-flex flex-column justify-content-center align-items-center">
+                  <img class="rounded-circle mb-3" src="http://via.placeholder.com/150x150" alt="">
+                  <file-input [label]="'انتخاب فایل'"></file-input>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="row">
+                  <div class="col-md-6 col-lg-4">
+                    <mat-form-field class="w-100">
+                      <input matInput placeholder="ایمیل">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6 col-lg-4">
+                    <mat-form-field class="w-100">
+                      <input matInput placeholder="موبایل">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6 col-lg-4">
+                    <mat-form-field class="w-100">
+                      <input matInput placeholder="تلفن ثابت">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <mat-form-field class="w-100">
+                      <input matInput placeholder="کد ملی">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-12 col-lg-6">
+                    <mat-form-field class="w-100">
+                      <input matInput placeholder="آدرس">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="row py-3 mt-4 justify-content-between">
+              <div class="col-4 col-lg-2 text-left">
+                <button class="w-100" mat-raised-button>لغو</button>
+              </div>
+              <div class="col-4 col-lg-2">
+                <button class="w-100" mat-raised-button color="primary">ذخیره</button>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+
+        <mat-tab dir="rtl" label="تغییر رمز عبور">
+          <div class="container-fluid p-4">
+            <div class="row justify-content-center align-items-center flex-column">
+              <div class="col-sm-7 col-md-6">
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="رمز عبور فعلی">
+                </mat-form-field>
+              </div>
+              <div class="col-sm-7 col-md-6">
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="رمز عبور جدید">
+                </mat-form-field>
+              </div>
+              <div class="col-sm-7 col-md-6">
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="تکرار رمز عبور جدید">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row py-3 mt-4 justify-content-center">
+              <div class="col-4 col-lg-2">
+                <button class="w-100" mat-raised-button color="primary">تغییر رمز عبور</button>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab dir="rtl" label="مشخصات مالی">
+          <div class="container-fluid p-4">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="w-100">
+                  <mat-select placeholder="نام بانک">
+                    <mat-option>انتخاب کنید</mat-option>
+                    <mat-option>صادرات</mat-option>
+                    <mat-option>سپه</mat-option>
+                    <mat-option>مسکن</mat-option>
+                    <mat-option>رفاه</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="نام دارنده حساب">
+                </mat-form-field>
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="شماره حساب بانکی">
+                </mat-form-field>
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="شماره کارت">
+                </mat-form-field>
+                <mat-form-field class="w-100">
+                  <input class="text-left" matInput placeholder="شماره شبا">
+                  <span matPrefix class="mr-2">IR</span>
+                  <mat-hint dir="rtl">شماره شبا یک شماره 24 رقمی است که با IR شروع می شود.</mat-hint>
+                </mat-form-field>
+                <div class="row py-3 mt-4 justify-content-between">
+                  <div class="col-4 col-lg-3 text-left">
+                    <button class="w-100" mat-raised-button>لغو</button>
+                  </div>
+                  <div class="col-4 col-lg-3">
+                    <button class="w-100" mat-raised-button color="primary">ذخیره</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <warnings [warnings]="financialWarnings"></warnings>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab dir="rtl " label="ارسال مدارک">
+          <div class="container-fluid p-4">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="w-100">
+                  <input class="text-left" matInput placeholder="تایید کد ملی">
+                </mat-form-field>
+                <div class="upload-btns d-flex justify-content-between">
+                  <file-input [label]="'آپلود تصویر پشت کارت ملی'"></file-input>
+                  <file-input [label]="'آپلود تصویر روی کارت ملی'"></file-input>
+                </div>
+
+                <div class="row py-3 mt-4 justify-content-center">
+                  <div class="col-4 col-lg-3">
+                    <button class="w-100" mat-raised-button color="primary">ذخیره</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <warnings [warnings]="documentsWarnings"></warnings>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

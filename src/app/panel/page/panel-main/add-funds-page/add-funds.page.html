@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+
+    <form class="example-form col-lg-6">
+      <mat-form-field class="example-full-width w-100">
+        <span matSuffix>تومان</span>
+        <input matInput placeholder="مبلغ واریزی" value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width w-100">
+        <textarea matInput placeholder="توضیحات" rows="5"></textarea>
+      </mat-form-field>
+      <div class="text-left mt-4">
+        <button mat-raised-button color="primary">افزایش موجودی</button>
+      </div>
+    </form>
+    <div class="col-lg-6">
+      <warnings [warnings]="warnings"></warnings>
+    </div>
+
+  </div>
+</div>

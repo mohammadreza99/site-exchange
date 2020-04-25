@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+  
+    <div class="col-md-4 col-lg-3 mb-3">
+      <panel-card [title]="'گیفت کارت'" [image]="'/assets/images/icon/1.png'">
+        <mat-nav-list class="pt-0">
+          <mat-list-item class="border-bottom" *ngFor="let item of giftcards" routerLink="/panel/new-order" [queryParams]="{type: 'giftcard' , id:item.id}">
+            <a matLine>{{ item.name }}</a>
+          </mat-list-item>
+        </mat-nav-list>
+      </panel-card>
+    </div>
+  
+    <div class="col-md-4 col-lg-3 mb-3">
+      <panel-card [title]="'تعیین وقت سفارت'" [image]="'/assets/images/icon/2.png'">
+        <mat-nav-list class="pt-0">
+          <mat-list-item class="border-bottom" *ngFor="let item of sefarats" routerLink="/panel/new-order" [queryParams]="{type: 'sefarat',id:item.id}">
+            <a matLine>{{ item.name }}</a>
+          </mat-list-item>
+        </mat-nav-list>
+      </panel-card>
+    </div>
+<!--   
+    <div class="col-md-4 col-lg-3 mb-3">
+      <panel-card [title]="'خدمات ویژه'" [image]="'/assets/images/icon/3.png'">
+        <mat-nav-list class="pt-0">
+          <mat-list-item class="border-bottom" *ngFor="let item of specialServices" routerLink="/panel/new-order" [queryParams]="{type: 'special',id:item.id}">
+            <a matLine>{{ item.name }}</a>
+          </mat-list-item>
+        </mat-nav-list>
+      </panel-card>
+    </div> -->
+  
+  </div>
+
+</div>

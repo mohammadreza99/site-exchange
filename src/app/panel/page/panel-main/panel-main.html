@@ -1,0 +1,252 @@
+<mat-sidenav-container class="example-container" dir="rtl">
+    <mat-sidenav #sidenav dir="ltr" class="d-lg-none">
+        <mat-accordion class="service-accordion" dir="rtl">
+            <mat-expansion-panel class="m-0 shadow-none border-bottom">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="align-items-center">
+                        <mat-list class="pt-0">
+                            <mat-list-item>
+                                <img matListAvatar src="http://via.placeholder.com/50x50" alt="...">
+                                <h3 matLine> {{'محمدرضا شهبازی'}} </h3>
+                                <p matLine class="d-flex text-muted">
+                                    <span> {{'کاربر عادی'}} </span>
+                                </p>
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list class="pt-0">
+                    <a mat-list-item routerLink="/home" routerLinkActive="active" (click)="sidenav.close()" class="border-bottom text-muted px-4">
+                        صفحه اصلی
+                    </a>
+                    <a mat-list-item routerLink="/panel/profile" routerLinkActive="active" (click)="sidenav.close()"
+                        class="border-bottom text-muted px-4">
+                        تنظیمات حساب کاربری
+                    </a>
+                    <a mat-list-item routerLink="/home" routerLinkActive="active" (click)="sidenav.close()" class="text-muted px-4">
+                        خروج
+                    </a>
+                </mat-nav-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel class="m-0 shadow-none border-bottom">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="align-items-center">
+                        <mat-icon class="align-top ml-2">list</mat-icon>
+                        سفارشات
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list class="pt-0">
+                    <a mat-list-item routerLink="/panel/orders-list" routerLinkActive="active" (click)="sidenav.close()"
+                        class="border-bottom text-muted px-4">
+                        لیست سفارشات
+                    </a>
+                    <a mat-list-item routerLink="/panel/services" routerLinkActive="active" (click)="sidenav.close()"
+                        class="text-muted px-4">
+                        سفارش جدید
+                    </a>
+                </mat-nav-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel class="m-0 shadow-none border-bottom">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="align-items-center">
+                        <mat-icon class="align-top ml-2">help_outline</mat-icon>
+                        پشتیبانی
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list class="pt-0">
+                    <a mat-list-item routerLink="/panel/tickets-list" routerLinkActive="active" (click)="sidenav.close()"
+                        class="border-bottom text-muted px-4">
+                        لیست تیکت ها
+                    </a>
+                    <a mat-list-item routerLink="/panel/new-ticket" routerLinkActive="active" (click)="sidenav.close()"
+                        class="text-muted px-4">
+                        ارسال تیکت جدید
+                    </a>
+                </mat-nav-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel class="m-0 shadow-none border-bottom">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="align-items-center">
+                        <mat-icon class="align-top ml-2">attach_money</mat-icon>
+                        امور مالی
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list class="pt-0">
+                    <a mat-list-item routerLink="/panel/transactions-list" routerLinkActive="active" (click)="sidenav.close()"
+                        class="border-bottom text-muted px-4">
+                        لیست تراکنش ها
+                    </a>
+                    <a mat-list-item routerLink="/panel/add-funds" routerLinkActive="active" (click)="sidenav.close()"
+                        class="text-muted px-4">
+                        افرایش موجودی
+                    </a>
+                </mat-nav-list>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <mat-nav-list class="pt-0 pr-2" dir="rtl">
+            <a mat-list-item routerLink="/panel" (click)="sidenav.close()" class="border-bottom">
+                <mat-icon class="align-top ml-2">table_chart</mat-icon>
+                داشبورد
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+
+    <mat-sidenav-content dir="rtl">
+        <div class="container-fluid bg-dark shadow" dir="rtl">
+            <nav class="navbar navbar-expand-lg  navbar-dark bg-dark py-0 w-100 h-100">
+                <button class="navbar-toggler d-flex d-lg-none align-items-center justify-content-center p-2"
+                    mat-button (click)="sidenav.open()" aria-controls="navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto text-white p-0">
+                        <li dropdown class="nav-item px-2 dropdown d-flex align-items-center">
+                            <a id="button-basic" dropdownToggle class="nav-link dropdown-toggle flex-column justify-content-center align-items-center"
+                                aria-controls="dropdown-basic">
+                                <mat-list>
+                                    <mat-list-item>
+                                        <img matListAvatar src="http://via.placeholder.com/50x50" alt="...">
+                                        <h3 matLine class="text-light"> {{'محمدرضا شهبازی'}} </h3>
+                                        <p matLine class="d-flex text-muted">
+                                            <span> {{'کاربر عادی'}} </span>
+                                            <mat-icon>keyboard_arrow_down</mat-icon>
+                                        </p>
+                                    </mat-list-item>
+                                </mat-list>
+                            </a>
+                            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu shadow dropdown-menu-right text-right"
+                                role="menu" aria-labelledby="button-basic">
+                                <li role="menuitem">
+                                    <mat-nav-list class="pt-0">
+                                        <a mat-list-item routerLink="/home" (click)="sidenav.close()" class="border-bottom text-muted">
+                                            <mat-icon class="ml-2">home</mat-icon>
+                                            صفحه اصلی
+                                        </a>
+                                        <a mat-list-item routerLink="/panel/profile" (click)="sidenav.close()" class="border-bottom text-muted">
+                                            <mat-icon class="ml-2">settings</mat-icon>
+                                            تنظیمات حساب کاربری
+                                        </a>
+                                        <a mat-list-item routerLink="/home" (click)="sidenav.close()" class="text-muted">
+                                            <mat-icon class="ml-2">report</mat-icon>
+                                            خروج
+                                        </a>
+                                    </mat-nav-list>
+                                </li>
+                            </ul>
+                        </li>
+                        <li dropdown class="nav-item px-2 dropdown d-flex align-items-center">
+                            <a id="button-basic" dropdownToggle class="nav-link dropdown-toggle flex-column justify-content-center align-items-center"
+                                aria-controls="dropdown-basic">
+                                <div>
+                                    موجودی کل
+                                </div>
+                                <div class="text-success font-weight-bold d-flex align-items-center">
+                                    {{' 0 '}} تومان
+                                    <mat-icon>keyboard_arrow_down</mat-icon>
+                                </div>
+                            </a>
+                            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu shadow dropdown-menu-right text-right"
+                                role="menu" aria-labelledby="button-basic">
+                                <li role="menuitem">
+                                    <mat-nav-list class="pt-0">
+                                        <a mat-list-item routerLink="/home" (click)="sidenav.close()" class="border-bottom text-muted">
+                                            خرید پی پال
+                                        </a>
+                                        <a mat-list-item routerLink="/home" (click)="sidenav.close()" class="text-muted">
+                                            خرید وب مانی
+                                        </a>
+                                    </mat-nav-list>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item px-2 text-center d-flex align-items-center">
+                            <a class="nav-link" routerLink="/panel">
+                                <mat-icon class="align-top">table_chart</mat-icon>
+                                داشبورد
+                            </a>
+                        </li>
+                        <li dropdown class="nav-item px-2 dropdown d-flex align-items-center">
+                            <a id="button-basic" dropdownToggle class="nav-link dropdown-toggle flex-column justify-content-center align-items-center"
+                                aria-controls="dropdown-basic">
+                                <mat-icon class="align-top">list</mat-icon>
+                                سفارشات
+                                <mat-icon class="align-top">keyboard_arrow_down</mat-icon>
+                            </a>
+                            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu shadow dropdown-menu-right text-right"
+                                role="menu" aria-labelledby="button-basic">
+                                <li role="menuitem">
+                                    <mat-nav-list class="pt-0">
+                                        <a mat-list-item routerLink="/panel/orders-list" (click)="sidenav.close()"
+                                            class="border-bottom text-muted">
+                                            لیست سفارشات
+                                        </a>
+                                        <a mat-list-item routerLink="/panel/services" (click)="sidenav.close()" class="text-muted">
+                                            سفارش جدید
+                                        </a>
+                                    </mat-nav-list>
+                                </li>
+                            </ul>
+                        </li>
+                        <li dropdown class="nav-item px-2 dropdown d-flex align-items-center">
+                            <a id="button-basic" dropdownToggle class="nav-link dropdown-toggle flex-column justify-content-center align-items-center"
+                                aria-controls="dropdown-basic">
+                                <mat-icon class="align-top">help_outline</mat-icon>
+                                پشتیبانی
+                                <mat-icon class="align-top">keyboard_arrow_down</mat-icon>
+                            </a>
+                            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu shadow dropdown-menu-right text-right"
+                                role="menu" aria-labelledby="button-basic">
+                                <li role="menuitem">
+                                    <mat-nav-list class="pt-0">
+                                        <a mat-list-item routerLink="/panel/tickets-list" (click)="sidenav.close()"
+                                            class="border-bottom text-muted">
+                                            لیست تیکت ها
+                                        </a>
+                                        <a mat-list-item routerLink="/panel/new-ticket" (click)="sidenav.close()" class="text-muted">
+                                            ارسال تیکت جدید
+                                        </a>
+                                    </mat-nav-list>
+                                </li>
+                            </ul>
+                        </li>
+                        <li dropdown class="nav-item px-2 dropdown d-flex align-items-center">
+                            <a id="button-basic" dropdownToggle class="nav-link dropdown-toggle flex-column justify-content-center align-items-center"
+                                aria-controls="dropdown-basic">
+                                <mat-icon class="align-top">attach_money</mat-icon>
+                                امور مالی
+                                <mat-icon class="align-top">keyboard_arrow_down</mat-icon>
+                            </a>
+                            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu shadow dropdown-menu-right text-right"
+                                role="menu" aria-labelledby="button-basic">
+                                <li role="menuitem">
+                                    <mat-nav-list class="pt-0">
+                                        <a mat-list-item routerLink="/panel/transactions-list" (click)="sidenav.close()"
+                                            class="border-bottom text-muted">
+                                            لیست تراکنش ها
+                                        </a>
+                                        <a mat-list-item routerLink="/panel/add-funds" (click)="sidenav.close()" class="text-muted">
+                                            افزایش موجودی
+                                        </a>
+                                    </mat-nav-list>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+                <a mat-raised-button class="navbar-brand mr-0 p-3 d-block" routerLink="/panel/services" color="primary">
+                    <mat-icon>shopping_cart</mat-icon>
+                    سفارش
+                </a>
+            </nav>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 px-0 pt-4" dir="rtl">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

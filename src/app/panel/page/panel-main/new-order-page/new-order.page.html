@@ -1,0 +1,115 @@
+<div class="container">
+  <div class="row py-4">
+      <order-title [orderType]="orderType" [orderName]="orderName"></order-title>
+    <div class="col-12">
+      <mat-horizontal-stepper [linear]="'true'" #stepper class="bg-light border rounded shadow" [editable]="'false'">
+
+
+
+        <mat-step  [editable]="'false'">
+          <ng-template matStepLabel>سفارش خرید</ng-template>
+
+          <giftcard-buy-panel (isValid)="isValid($event)" [buyTypes]="buyTypes" *ngIf="orderType == 'giftcard'">
+            <button mat-raised-button [disabled]="!validForm" matStepperNext color="primary" class="button px-4">ثبت
+              سفارش</button>
+          </giftcard-buy-panel>
+
+          <sefarat-buy-panel (isValid)="isValid($event)" *ngIf="orderType == 'sefarat'">
+            <button mat-raised-button [disabled]="!validForm" matStepperNext color="primary" class="px-4 button">ثبت
+              سفارش</button>
+          </sefarat-buy-panel>
+        </mat-step>
+
+
+
+        <mat-step [editable]="'false'">
+          <ng-template matStepLabel>ورود به سایت</ng-template>
+          <div >
+            <h4 class="title w-100 text-center"> برای تکمیل فرایند خود وارد حساب کاربری خود شوید و یا ثبت نام کنید.</h4>
+            <registration-page></registration-page>
+          </div>
+          <ng-template #isRegistered>
+            <div class="container-fluid">
+              <div class="row justify-content-center">
+                <div class="col-12 d-flex align-items-center justify-content-center py-5">
+                  <mat-icon class="mx-3 bg-success text-white rounded-circle h6">check</mat-icon>
+                  <h4 class="title mb-0">شما با موفقیت وارد حساب خود شده اید</h4>
+                </div>
+                <div class="col-4 col-lg-2 text-center">
+                  <button mat-raised-button color="primary" class="w-100" matStepperNext>ادامه</button>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </mat-step>
+
+
+
+
+        <mat-step [editable]="'false'">
+          <ng-template matStepLabel>پرداخت هزینه</ng-template>
+          <h3 class="w-100 text-center mb-4 title">شرح صورتحساب</h3>
+          <div class="container-fluid">
+            <div class="row justify-content-center flex-column align-items-center">
+              <div class="col-md-6">
+                <div class="details text-center">
+                  <div class="mb-2">
+                    <span class="font-weight-bold">شماره سفارش : </span>
+                    <span>{{'2561615'}}</span>
+                  </div>
+                  <div class="mb-2">
+                    <span class="font-weight-bold">تاریخ سفارش : </span>
+                    <span>{{'27/09/1397'}}</span>
+                  </div>
+                  <div class="mb-2">
+                    <span class="font-weight-bold">میزان ارز: </span>
+                    <span>{{' 500 '}} دلار</span>
+                  </div>
+                </div>
+                <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">شرح</th>
+                      <th scope="col">مبلغ (تومان)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Larry</td>
+                    </tr>
+                  </tbody>
+                  <tfoot class="thead-dark">
+                    <tr>
+                      <th scope="col">مبلغ قابل پرداخت</th>
+                      <th scope="col">2500</th>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <div class="col-4 col-lg-2 my-3">
+                <button class="w-100" mat-raised-button color="primary">پرداخت هزینه</button>
+              </div>
+            </div>
+          </div>
+        </mat-step>
+
+
+
+
+
+      </mat-horizontal-stepper>
+    </div>
+    <div class="col-12 mt-3">
+      <warnings [warnings]="warnings" [maxHeight]="250"></warnings>
+    </div>
+  </div>
+</div>

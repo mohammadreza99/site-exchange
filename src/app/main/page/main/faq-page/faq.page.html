@@ -1,0 +1,10 @@
+<page-header [title]="'سوالات متداول'"></page-header>
+<div class="container">
+  <div class="row py-4">
+    <div class="col-12">
+      <mat-accordion>
+        <faq [question]="faq.q" [answer]="faq.a" *ngFor="let faq of faqs"></faq>
+      </mat-accordion>
+    </div>
+  </div>
+</div>

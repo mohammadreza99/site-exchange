@@ -1,0 +1,10 @@
+@import "../../../../sass/style.scss";
+
+.border-bottom {
+    border-bottom-style: dotted !important;
+    border-width: 3px !important;
+}
+
+.title {
+    @include title;
+}

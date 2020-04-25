@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-lg-7">
+          <mat-form-field class="w-100">
+            <input matInput placeholder="موضوع">
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <input class="text-left" matInput placeholder="مربوط به سفارش شماره ی">
+            <span matSuffix class="mr-2">#</span>
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <textarea matInput placeholder="متن تیکت"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-5">
+          <mat-form-field class="w-100">
+            <mat-select placeholder="اولویت">
+              <mat-option value="low">
+                کم
+              </mat-option>
+              <mat-option value="medium">
+                متوسط
+              </mat-option>
+              <mat-option value="high">
+                زیاد
+              </mat-option>
+              <mat-option value="necessary">
+                ضروری
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <mat-select placeholder="بخش">
+              <mat-option value="call-center">
+                مرکز تماس
+              </mat-option>
+              <mat-option value="support">
+                پشتیبانی
+              </mat-option>
+              <mat-option value="sell">
+                فروش
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="d-flex justify-content-end mt-4">
+            <file-input></file-input>
+          </div>
+        </div>
+        <div class="col-12 py-3 text-center mt-5 text-lg-left">
+          <button mat-raised-button color="primary">ثبت تیکت</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

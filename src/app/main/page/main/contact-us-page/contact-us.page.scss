@@ -1,0 +1,15 @@
+@import "../../../../../sass/style.scss";
+
+mat-nav-list ::ng-deep .mat-list-item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    width: 32px;
+  }
+}
+
+h4 {
+  @include smallTitle;
+}

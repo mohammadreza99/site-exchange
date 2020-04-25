@@ -1,0 +1,35 @@
+@import "../../../../../sass/style.scss";
+
+mat-radio-button,
+mat-radio-button ::ng-deep .mat-radio-label,
+mat-radio-button ::ng-deep .mat-radio-label-content {
+  width: 100%;
+  height: 100%;
+}
+
+mat-radio-button ::ng-deep .mat-radio-label {
+  padding: 0 16px;
+  margin-bottom: 0;
+}
+
+mat-radio-button ::ng-deep .mat-radio-label-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+mat-nav-list ::ng-deep .mat-list-item-content {
+  padding: 0 !important;
+}
+
+.title {
+  @include smallTitle;
+}
+
+mat-nav-list a:last-child {
+  border-bottom: 0 !important;
+}
+
+img {
+  max-width: 35px;
+}

@@ -1,0 +1,11 @@
+@import "../../../../sass/style.scss";
+
+.cost, .title {
+    font-family: IRANSans;
+
+    @include smallTitle;
+}
+
+table {
+    font-family: IRANSans;
+}

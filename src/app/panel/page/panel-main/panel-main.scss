@@ -1,0 +1,47 @@
+@import "../../../../sass/style.scss";
+
+.navbar-brand {
+  width: 150px;
+}
+
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+mat-sidenav {
+  min-width: 300px;
+}
+
+.service-accordion ::ng-deep .mat-expansion-panel-body {
+  padding: 0;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown {
+  cursor: pointer;
+}
+
+.title {
+  @include smallTitle;
+}
+
+mat-list-item ::ng-deep .mat-list-item-content {
+  padding-right: 0 !important;
+}
+
+@media (min-width: 992px) {
+  mat-sidenav-container ::ng-deep .mat-drawer-backdrop {
+    display: none !important;
+  }
+}
+
+.container-fluid {
+  height: 96px;
+}

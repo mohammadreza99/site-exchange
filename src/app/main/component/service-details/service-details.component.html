@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col-md-6 py-4 bg-light">
+      <h2 class="title">
+        {{service.name}}
+      </h2>
+      <div class="brief" [innerHTML]="service.brief"></div>
+      <button class="btn-block py-2 rounded mt-4" mat-raised-button color="primary" routerLink="/new-order"
+        [queryParams]="{type: orderType == 'sefarat' ? 'sefarat' : 'special',id:service.id}">ثبت
+        سفارش</button>
+    </div>
+    <div class="col-md-6 py-4 bg-light">
+      <div class="image-wrapper text-left">
+        <img class="w-100 img-fluid" [src]="service.image">
+      </div>
+    </div>
+    <div class="col-12 py-4" [innerHTML]="service.description"></div>
+  </div>
+</div>

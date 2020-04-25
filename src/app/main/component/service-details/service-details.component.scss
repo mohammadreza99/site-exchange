@@ -1,0 +1,9 @@
+@import "../../../../sass/style.scss";
+
+.title {
+    @include title;
+}
+
+img{
+    max-width: 400px;
+}

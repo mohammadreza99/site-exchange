@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive-md">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">شماره</th>
+              <th scope="col">نوع سفارش</th>
+              <th scope="col">مبلغ سفارش</th>
+              <th scope="col">تاریخ ثبت</th>
+              <th scope="col">وضعیت</th>
+              <th scope="col">عملیات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of ordersList;let i = index">
+              <th class="align-middle" scope="row">{{i+1}}</th>
+              <td class="align-middle">{{item.number}}</td>
+              <td class="align-middle">{{item.title}}</td>
+              <td class="align-middle">{{item-amount}}</td>
+              <td class="align-middle">{{item.submitDate}}</td>
+              <td class="align-middle">{{item.status}}</td>
+              <td class="align-middle">
+                <button mat-icon-button>
+                  <mat-icon>remove_red_eye</mat-icon>
+                </button>
+                <button mat-icon-button>
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button>
+                  <mat-icon>close</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <empty-list class="d-block m-auto" [show]="ordersList.length == 0"></empty-list>
+      </div>
+    </div>
+  </div>
+</div>

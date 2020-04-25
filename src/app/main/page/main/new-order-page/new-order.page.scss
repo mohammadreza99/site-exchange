@@ -1,0 +1,13 @@
+@import "../../../../../sass/style.scss";
+.title {
+  font-family: IRANSans;
+  @include smallTitle;
+}
+
+mat-horizontal-stepper ::ng-deep .mat-icon {
+  font-family: "Material Icons";
+}
+
+mat-horizontal-stepper ::ng-deep .mat-horizontal-stepper-header {
+  pointer-events: none !important;
+}

@@ -1,0 +1,5 @@
+@import "../../../../../sass/style.scss";
+
+.title {
+    @include title;
+}

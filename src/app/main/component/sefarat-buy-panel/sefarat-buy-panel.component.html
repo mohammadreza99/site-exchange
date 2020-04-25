@@ -1,0 +1,42 @@
+<form [formGroup]="formGroup">
+  <div class="d-flex align-items-center">
+    <mat-form-field class="w-100 ml-0 ml-lg-2">
+      <input matInput placeholder="میزان ارز" formControlName="exchangeAmount">
+      <mat-error *ngIf="formGroup.get('exchangeAmount').hasError('required')">این فیلد الزامی است.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="w-100 mr-0 mr-lg-2">
+      <mat-select placeholder="نوع ارز" [value]="'dolar'">
+        <mat-option [value]="'dolar'">
+          دلار
+        </mat-option>
+        <mat-option [value]="'yoro'">
+          یورو
+        </mat-option>
+        <mat-option [value]="'pond'">
+          پوند
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <mat-form-field class="w-100">
+    <input matInput placeholder="آدرس خرید سرویس / محصول" name="serviceAddress" formControlName="serviceAddress">
+    <mat-error *ngIf="formGroup.get('serviceAddress').hasError('required')">این فیلد الزامی است.</mat-error>
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <textarea matInput placeholder="توضیحات اضافه"></textarea>
+  </mat-form-field>
+  <div class="d-flex justify-content-between align-items-center my-4">
+    <div>
+      <mat-checkbox  color="primary" class="d-block" formControlName="terms" required>
+        <a routerLink="/terms-conditions"> شرایط </a>
+        را مطالعه کرده و قبول دارم.
+      </mat-checkbox>
+      <mat-error *ngIf="formGroup.get('terms').hasError('required')">این فیلد الزامی است.</mat-error>
+    </div>
+    <file-input></file-input>
+  </div>
+
+  <div class="text-center my-2">
+    <ng-content select=".button"></ng-content>
+  </div>
+</form>

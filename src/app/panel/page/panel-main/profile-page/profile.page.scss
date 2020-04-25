@@ -1,0 +1,23 @@
+@import "../../../../../sass/style.scss";
+
+.image-wrapper img {
+  max-width: 150px;
+}
+
+.title,
+h4 {
+  @include smallTitle;
+}
+
+.upload-btns file-input ::ng-deep .input-file-container {
+  width: 190px;
+  cursor: pointer;
+}
+
+mat-form-field ::ng-deep .mat-form-field-hint-spacer {
+  display: none;
+}
+
+mat-form-field ::ng-deep .mat-form-field-hint-wrapper {
+  justify-content: flex-end;
+}

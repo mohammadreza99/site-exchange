@@ -1,0 +1,27 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <giftcard-item [title]="'انواع گیفت کارت'" [description]="'گیفت کارت یا کارت هدیه همانطور که از نامش پیداست کارتی با میزان اعتبار مشخص و از قبل شارژ شده می باشد که جهت
+        استفاده از فروشگاه های معتبر به جای پرداخت پول نقد یا استفاده از کارت های نقدی برای پرداخت استفاده می شود.
+        امروزه فروشگاه های بزرگ اقدام به صدور و ارائه کارت های هدیه به منظور فروش بیشتر خود می کنند. در این بین،
+        فروشگاه های بزرگ محصولات و محتواهای دیجیتال مانند آیتونز ، گوگل پلی ، استیم و یا آمازون با ارائه ی کارت های
+        هدیه امکان خرید محصولاتشان را فراهم می کنند.'" [image]="'assets/images/gifts/all.png'" [smallType]="false"></giftcard-item>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <giftcard-item *ngFor="let gift of giftcards;let i = index" [id]="'item'+ (i+1)" [title]="gift.name" [description]="gift.description"
+      [image]="gift.image" [smallType]="true" [direction]="getDirection()">
+      <div class="btn-wrapper text-center text-md-left">
+        <button mat-raised-button color="primary" routerLink="/new-order" [queryParams]="{type:'giftcard',id:gift.id}">
+          ثبت سفارش {{gift.name}}
+        </button>
+      </div>
+    </giftcard-item>
+  </div>
+</div>

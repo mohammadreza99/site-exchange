@@ -1,0 +1,56 @@
+@import "../../../../sass/style.scss";
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2.background {
+    @include smallTitle;
+
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        border-top: 2px solid #dfdfdf;
+        content: "";
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    span {
+        padding: 0 15px;
+
+        img {
+            width: 40px;
+        }
+    }
+}
+
+h2.double:before {
+    border-top: none;
+}
+
+h2.double:after {
+    border-bottom: 1px solid blue;
+    border-top: 1px solid blue;
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+    height: 5px;
+}

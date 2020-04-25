@@ -1,0 +1,199 @@
+<div dir="ltr">
+    <ngu-carousel  class="w-100" #myCarousel [inputs]="carousel" [dataSource]="carouselItems">
+        <ngu-tile *nguCarouselDef="let item; let i = index" class="px-0 heder">
+            <div dir="rtl" class="content d-flex justify-content-around" [style.backgroundColor]="item.color">
+                <div class="d-flex align-items-center justify-content-center pr-5 w-75">
+                    <ul class="w-100 list">{{item.title}}
+                        <li class="pr-2" *ngFor="let li of item.list">{{li}}</li>
+                    </ul>
+                </div>
+                <div class="image-wrapper w-75 d-flex align-items-center justify-content-center pl-5">
+                    <img [src]="item.img" class="img-fluid">
+                </div>
+            </div>
+        </ngu-tile>
+        <button NguCarouselNext class="rightRs">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+        <button NguCarouselPrev class="leftRs">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <ul class="myPoint" NguCarouselPoint>
+            <li *ngFor="let i of myCarousel.pointNumbers; let i = index" [class.active]="i==myCarousel.activePoint" (click)="myCarousel.moveTo(i)"
+                [style.background]="'url(' + carouselItems[i] + ')'"></li>
+        </ul>
+    </ngu-carousel>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <card [title]="'مستر کارت گیفت'">
+                <title-sibling>
+                    <a href="">
+                        (جزییات بیشتر)
+                    </a>
+                </title-sibling>
+                <div class="d-flex justify-content-between">
+                    <div class="image-wrapper rouded ml-2">
+                        <img class="img-fluid" src="/assets/images/gifts/master.png" alt="">
+                    </div>
+                    <div class="cost bg-light rounded p-3">
+                        <div class="input-group mb-3" dir="ltr">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">$</span>
+                            </div>
+                            <input type="text" class="form-control text-right" placeholder="مبلغ" aria-label="cost" aria-describedby="basic-addon1">
+                        </div>
+                        <div>
+                            <span class="font-weight-bold">هزینه : </span>
+                            {{'2000'}} تومان
+                        </div>
+                        <button mat-raised-button class="btn-success my-2 btn-block" routerLink="/new-order" [queryParams]="{type:'giftcard'}">ثبت
+                            سفارش
+                        </button>
+                    </div>
+                </div>
+            </card>
+        </div>
+        <div class="col-md-6 mb-3">
+            <card [title]="'مستر کارت مجازی آنی'">
+                <title-sibling>
+                    <a href="">
+                        (جزییات بیشتر)
+                    </a>
+                </title-sibling>
+                <div class="d-flex justify-content-between">
+                    <div class="image-wrapper rouded ml-2">
+                        <img class="img-fluid" src="/assets/images/gifts/virtual.png" alt="">
+                    </div>
+                    <div class="cost bg-light rounded p-3">
+                        <div class="input-group mb-3" dir="ltr">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">$</span>
+                            </div>
+                            <input type="text" class="form-control text-right" placeholder="مبلغ" aria-label="cost" aria-describedby="basic-addon1">
+                        </div>
+                        <div>
+                            <span class="font-weight-bold">هزینه : </span>
+                            {{'2000'}} تومان
+                        </div>
+                        <button mat-raised-button class="btn-success my-2 btn-block">ثبت سفارش</button>
+                    </div>
+                </div>
+            </card>
+        </div>
+
+        <div class="col-12 mt-3 mb-4">
+            <card [title]="'خدمات ویژه'">
+                <div class="row">
+                    <div class="col-sm-6 col-md mb-3 mb-md-0" *ngFor="let service of specialServices" routerLink="/service-details" [queryParams]="{type: 'special' , id:service.id}">
+                        <div class="card-hover bg-light d-flex flex-column align-items-center justify-content-center p-4 rounded h-100 text-center">
+                            <div class="image-wrapper">
+                                <img [src]="service.image" class="special-service-image">
+                            </div>
+                            <p class="text-muted mb-0 mt-2">{{service.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </card>
+        </div>
+        <div class="col-12">
+            <h3 class="title separator" dir="rtl">برخی از مشتریان</h3>
+        </div>
+        <div dir="ltr" class="col-12 mb-3">
+            <ngu-carousel class="w-100 customers-wrapper" #customers [inputs]="customer" [dataSource]="customerItems">
+                <ngu-tile *nguCarouselDef="let item; let i = index" class="customers">
+
+                    <div class="customer d-flex align-items-center justify-content-center">
+                        <img [src]="item" class="img-fluid">
+                    </div>
+
+                </ngu-tile>
+                <button NguCarouselNext class="rightRs">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+                <button NguCarouselPrev class="leftRs">
+                    <mat-icon>keyboard_arrow_left</mat-icon>
+                </button>
+
+            </ngu-carousel>
+        </div>
+        <!-- <div class="col-md-6 my-4">
+        <card [title]="'ویزا کارت و مسترکارت بانکی'">
+            <div class="d-flex justify-content-between">
+                <div class="image-wrapper rouded ml-4">
+                    <img class="img-fluid" src="http://via.placeholder.com/250x150" alt="">
+                </div>
+                <div>
+                    <div class="text">
+                        <h3>سفارش انواع ویزاکارت و مسترکارت بین المللی</h3>
+                    </div>
+                    <div class="text-left">
+                        <button mat-raised-button color="primary">سفارش ویزا و مستر کارت</button>
+                    </div>
+                </div>
+            </div>
+        </card>
+    </div>
+
+    <div class="col-md-6 my-4">
+        <card [title]="'پرداخت آنلاین و دانشجویی'">
+            <div class="row h-100 align-items-center">
+                <div class="col">
+                    <div class="card-hover bg-light d-flex flex-column align-items-center justify-content-center p-4 rounded">
+                        <div class="image-wrapper">
+                            <img src="http://via.placeholder.com/50x50" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-hover bg-light d-flex flex-column align-items-center justify-content-center p-4 rounded">
+                        <div class="image-wrapper">
+                            <img src="http://via.placeholder.com/50x50" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </card>
+    </div>
+
+    <div class="col-md-6 my-4">
+        <card [title]="'گیفت کارت ها'">
+            <div class="d-flex justify-content-between">
+                <div class="image-wrapper rouded ml-4">
+                    <img class="img-fluid" src="http://via.placeholder.com/250x150" alt="">
+                </div>
+                <div>
+                    <div class="text">
+                        <h3>گیفت کارت های آیتونز، گوگل پلی، آمازون، ماکروسافت، ایکس باکس، استیم و اسپاتیفای، بهترین روش برای
+                            تهیه اپ، بازی یا موسیقی...</h3>
+                    </div>
+                    <div class="text-left">
+                        <button mat-raised-button color="primary">اطلاعات بیشتر</button>
+                    </div>
+                </div>
+            </div>
+        </card>
+    </div>
+
+    <div class="col-md-6 my-4">
+        <card [title]="'نقد کردن درآمدهای اینترنتی'">
+            <div class="d-flex justify-content-between">
+                <div class="image-wrapper rouded ml-4">
+                    <img class="img-fluid" src="http://via.placeholder.com/250x150" alt="">
+                </div>
+                <div>
+                    <div class="text">
+                        <h3>
+                            طراح، معمار، عکاس و یا دارای حرفه خاصی هستید که با مشتریان خارج از کشور همکاری دارید؟ درامد اینترنتی خود را به ریال نقد کنید.
+                        </h3>
+                    </div>
+                    <div class="text-left">
+                        <button mat-raised-button color="primary">نحوه نقد کردن درآمد ارزی</button>
+                    </div>
+                </div>
+            </div>
+        </card>
+    </div> -->
+    </div>
+</div>

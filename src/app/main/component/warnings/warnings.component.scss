@@ -1,0 +1,9 @@
+@import "../../../../sass/style.scss";
+
+h4 {
+    @include smallTitle;
+}
+
+.bg-warning {
+    background: #ffe27594 !important;
+}

@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="row">
+        <div class="col-12 py-3">
+          <mat-radio-group [value]="0">
+            <mat-radio-button class="d-block mx-3" [value]="i" color="primary" *ngFor="let type of buyTypes; let i = index">{{type}}</mat-radio-button>
+          </mat-radio-group>
+
+          <mat-form-field class="w-100">
+            <mat-select placeholder="تعداد" [formControl]="count" required>
+              <mat-option>--</mat-option>
+              <mat-option [value]="i" *ngFor="let number of numbers;let i = index">
+                {{number}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="count.hasError('required')">این فیلد الزامی است.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-100 desc">
+            <textarea matInput rows="3" placeholder="توضیحات اضافه"></textarea>
+          </mat-form-field>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7 d-flex flex-column justify-content-around">
+      <div class="row align-items-center">
+        <div class="col-sm-6">
+          <mat-checkbox (change)="accepted($event)" color="primary">
+            <a routerLink="/terms-conditions">شرایط</a>
+            را مطالعه کرده و قبول دارم.
+          </mat-checkbox>
+          <mat-error *ngIf="!accept">این مورد الزامی است.</mat-error>
+        </div>
+        <div class="col-sm-6 text-sm-left">
+          <file-input></file-input>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-sm-6">
+          <div class="text-success font-weight-bold py-3 rounded h3 mb-0">
+            <span class="d-inline-block">مبلغ کلی : </span>
+            <span class="d-inline-block">{{'25000'}} تومان</span>
+          </div>
+        </div>
+        <div class="col-sm-6 text-sm-left">
+          <ng-content select=".button"></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

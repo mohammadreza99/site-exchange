@@ -1,0 +1,5 @@
+@import "../../../../../sass/style.scss";
+
+mat-tab-group ::ng-deep .mat-tab-body-content {
+  overflow: hidden !important;
+}

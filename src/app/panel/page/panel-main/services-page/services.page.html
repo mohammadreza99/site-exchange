@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="shadow">
+        <div>
+          <h4 class="title text-center py-3 border border-bottom-0 mb-0 bg-dark text-white">دسته بندی خدمات</h4>
+        </div>
+        <mat-nav-list class="border pt-0 d-none d-md-block">
+          <a mat-list-item class="border-bottom">
+            <mat-radio-button  color="primary" (change)="onChange('giftcard')" [disableRipple]="true">
+              گیفت کارت ها
+              <img src="/assets/images/icon/2.png">
+            </mat-radio-button>
+          </a>
+          <a mat-list-item class="border-bottom">
+            <mat-radio-button  color="primary" (change)="onChange('sefarat')" [disableRipple]="true">
+              تعیین وقت سفارت
+              <img src="/assets/images/icon/1.png">
+            </mat-radio-button>
+          </a>
+          <a mat-list-item class="border-bottom">
+            <mat-radio-button  color="primary" (change)="onChange('special')" [disableRipple]="true">
+              خدمات ویژه
+              <img src="/assets/images/icon/3.png">
+            </mat-radio-button>
+          </a>
+        </mat-nav-list>
+        <mat-accordion class="service-accordion d-block d-md-none">
+          <mat-expansion-panel class="m-0 shadow-none border-bottom bg-light">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="align-items-center pr-1">
+                گیفت کارت ها
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list class="pt-0">
+              <a mat-list-item *ngFor="let giftcard of giftcards" routerLink="/panel/new-order" [queryParams]="{type: 'giftcard', id:giftcard.id}"
+                (click)="sidenav.close()" class="border-bottom text-muted px-4">
+                {{giftcard.name}}
+              </a>
+            </mat-nav-list>
+          </mat-expansion-panel>
+          <mat-expansion-panel class="m-0 shadow-none border-bottom bg-light">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="align-items-center pr-1">
+                تعیین وقت سفارت
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list class="pt-0">
+              <a mat-list-item *ngFor="let sefarat of sefarats" routerLink="/panel/new-order" [queryParams]="{type:'sefarat' , id:sefarat.id}"
+                (click)="sidenav.close()" class="border-bottom text-muted px-4">
+                {{sefarat.name}}
+              </a>
+            </mat-nav-list>
+          </mat-expansion-panel>
+          <mat-expansion-panel class="m-0 shadow-none border-bottom bg-light">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="align-items-center pr-1">
+                خدمات ویژه
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list class="pt-0">
+              <a mat-list-item *ngFor="let service of specialServices" routerLink="/panel/new-order" [queryParams]="{type:'special' , id:service.id}"
+                (click)="sidenav.close()" class="border-bottom text-muted px-4">
+                {{service.name}}
+              </a>
+            </mat-nav-list>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+    <div class="col-md-7 d-none d-md-block">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="جستجوی خدمات...">
+      </mat-form-field>
+      <mat-nav-list class="pt-0 bg-white">
+        <a mat-list-item class="border-bottom" @show *ngFor="let service of activeServiceList" routerLink="/panel/new-order"
+          [queryParams]="{type: getServiceType() , id:service.id}">
+          <mat-icon matListIcon color="primary">keyboard_arrow_left</mat-icon>
+          {{service.name}}
+        </a>
+      </mat-nav-list>
+    </div>
+  </div>
+</div>
